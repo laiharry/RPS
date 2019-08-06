@@ -35,4 +35,5 @@ server.on('connection', function connection(ws, req) {
 
 });
 
+console.log(process.env)
 console.log(server);
