@@ -1,23 +1,11 @@
-var express = require('express'),
-    fs = require('fs'),
-    app = express(),
-    eps = require('ejs');
-//    morgan = require('morgan');
-
-// const http = require('http').Server(app);
-
-
-var app = express();
-
-var ip = process.env.IP || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
-var PORT = process.env.PORT || 3000;
-
-// app is running!
-app.get('/', function(req, res) {
-//    res.render('index.ejs');
-    res.send('Hello from NodeJS  at '+ new Date());
+const WebSocket = require('ws');
+ 
+const wss = new WebSocket.Server({ port: 8080 });
+ 
+wss.on('connection', function connection(ws) {
+  ws.on('message', function incoming(message) {
+    console.log('received: %s', message);
+  });
+ 
+  ws.send('something');
 });
-
-app.listen(8080, ip);
-
-module.exports = app;
