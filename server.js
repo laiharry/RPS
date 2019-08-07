@@ -1,6 +1,10 @@
 const WebSocket = require('ws');
+const http = require('http');
 
-const server = new WebSocket.Server({ port: 8080 });
+const hserver = http.createServer({
+});
+
+const server = new WebSocket.Server({server : hserver, port: 8080 });
 
 
 server.on('open', function open() {
