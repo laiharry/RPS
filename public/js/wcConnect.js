@@ -30,7 +30,7 @@ class WCConnect {
 
 //            var s = new WebSocket(((window.location.protocol === "https:") ? "wss://" : "ws://") + window.location.host + "/ws");
 //			socket = new WebSocket("ws://localhost:8080/ws");
-            this.socket = new WebSocket("ws://rps-rps.apps.us-east-2.online-starter.openshift.com:8080/ws");  
+            this.socket = new WebSocket("ws://rps-rps.apps.us-east-2.online-starter.openshift.com/ws");  
 //            this.socket = new WebSocket(`ws://${this.IP}:${this.PORT}/ws`);
 //            this.socket = new WebSocket(`ws://localhost:3000/ws`);
             this.socket.onmessage = function (event) {
