@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<!--
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	-->
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+	<!-- jQuery Mobile library 
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+-->
+
+	<script src="./js/wcConnect.js" type="application/javascript"></script>	
+	<script src="./js/RPS.js" type="application/javascript"></script>	
+
+	
+	<title>RPS</title>
+
+	<link href="./css/bootstrap-4.0.0.css" rel="stylesheet" type="text/css">
+	<link href="./css/main.css" rel="stylesheet" type="text/css">
+
+	<script>		
+		$(document).ready(function(){
+			webView();
+			showResult();
+			btnEnable();
+			overlayOn();			
+		});
+	</script>
+</head>
+
+<body>
+	<div id="divOverlay" align="center">
+		<form id="formNickname" onsubmit="return false;">
+				<br/><br/>
+				<h3>RPS</h3><br/><br/>
+				<input type="text" name="nickname" style="width: 17vw" value="MyName" placeholder="Your Name ..."><br/><br/>
+				<input type="button" value="Start" onclick="overlayOff();newGame()">
+		</form>
+	</div>
+
+	<!--
+	<div id="divOverlayWait" align="center">
+		<br/><br/>
+		<br/><br/>
+		<br/><br/>
+		<br/><br/>
+		<br/><br/>
+		<div class="spinner-border"></div>
+	</div>
+-->
+
+	<div class="row" align="center">
+		<div class="divTitle" id="divTitleLeft"></div>
+		<div class="divTitle" id="divMyName">MyName</div>
+		<div class="divTitle" id="divMyResult" calss="col-sm-2">99</div>
+		<div class="divTitle" id="divColon">:</div>
+		<div class="divTitle" id="divOpResult" calss="col-sm-2">99</div>
+		<div class="divTitle" id="divOpName">OpName</div>
+		<div class="divTitle" id="divTitleRight"></div>
+	</div>
+
+	<div class="row">
+		<div id="divResult" class="col-sm-8" align="center">
+		<h1>0:0</h1>
+		OK:
+		<h2>0:0</h2>
+		Hand
+		<h3>0:0</h3>
+		<button onclick="overlayOn();quitGame()">Quit</button>
+	  </div>
+	  <div id="divPlayersList" class="col-sm-4">
+		  <h1>Players</h1>
+		  <div id="divdebugMsg"><p>Debug</p></div>
+		  <p>Me</p>
+	  </div>
+  </div>
+  <div class="row">
+	<div id="zone0" class="col-sm-4">
+	  <div id="demo0">Demo</div>
+	  <div id="divBigIcon0"><img class="imgBigIcon" id="imgBigIcon0"  alt="Blank" style="position:relative;"/></div>
+	  <div class="row">
+		<div class="divSmallIcon" id="btnRock0"><img class="imgSmallIcon" id="imgRock0"  alt="Rock"/></div>
+		<div class="divSmallIcon" id="btnPaper0"><img class="imgSmallIcon" id="imgPaper0"  alt="Paper"/></div>
+		<div class="divSmallIcon" id="btnScissors0"><img class="imgSmallIcon" id="imgScissors0" alt="Scissors"/></div>
+	  </div>
+	</div>
+	<div id="zone1" class="col-sm-4">
+	  <div id="demo1">Demo</div>
+	  <div id="divBigIcon1"><img class="imgBigIcon" id="imgBigIcon1"  alt="Blank" style="position:relative;"/></div>
+	  <div class="row">
+		<div class="divSmallIcon" id="btnRock1"><img class="imgSmallIcon" id="imgRock1" alt="Rock"/></div>
+		<div class="divSmallIcon" id="btnPaper1"><img class="imgSmallIcon" id="imgPaper1" alt="Paper"/></div>
+		<div class="divSmallIcon" id="btnScissors1"><img class="imgSmallIcon" id="imgScissors1"  alt="Scissors"/></div>
+	  </div>
+	</div>
+	<div id="zone0" class="col-sm-4">
+	  <form id="formWebChat" onsubmit="return false;">
+		<h3>WS Chat Room：</h3>
+		<textarea id="responseText"></textarea>
+		<br>
+		<input type="text" name="message" style="width: 17vw" value="Welcome to RPS.com">
+<!--
+		<input type="button" value="Send" onclick="send(this.form.message.value)">
+-->
+		<input type="button" value="Send" onclick="webChatSend()">
+		<input type="button" onclick="javascript:document.getElementById('responseText').value=''" value="Clear">
+	</form>
+  </div>
+  
+</body>
+
+</html>

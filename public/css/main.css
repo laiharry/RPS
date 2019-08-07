@@ -1,0 +1,67 @@
+@charset "utf-8";
+/* CSS Document */
+
+.divTitle {font-size: 1.5rem}
+#divTitleLeft {width:10%}
+#divMyName {text-align: center; width:20%}
+#divMyResult {text-align: right; width:16%}
+#divColon {text-align: center; width:8% }
+#divOpResult {text-align: left; width:16% }
+#divOpName {text-align: left; width:20% }
+#divTitleRight {width:10% }
+
+.imgBigIcon {
+	width: 30vw;
+	height: 30vw;
+}
+
+.imgSmallIcon {
+    text-align: center;
+	width: 8vw;
+	height: 8vw;
+}
+
+.divSmallIcon {
+    text-align: center;
+	width: 6vm;
+	height: 6vm;
+}
+
+#imgBigIcon1 {
+	transform: scaleX(-1);
+}
+
+#responseText {
+	width: 30vw;
+	height: 30vw;
+}
+
+#divOverlay {
+	position: fixed;
+	display: none;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0,0,0,0.5);
+	z-index: 2;
+	cursor: pointer;
+}
+
+#divOverlayWait {
+	position: fixed;
+	display: none;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0,0,0,0.5);
+	z-index: 2;
+	cursor: pointer;
+}
+
+
