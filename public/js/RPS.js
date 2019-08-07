@@ -36,9 +36,9 @@ function webChatSend() {
 }
 
 
-let result = [0,0];
-let ok = [0, 0];
-let hand = [0,0];
+// let result = [0,0];
+ let ok = [0, 0];
+// let hand = [0,0];
 
 function webView() {
 	$("#imgBigIcon0").attr("src","img/blank.png");
@@ -52,6 +52,7 @@ function webView() {
 
 }
 
+/*
 // will move to server
 function calResult() {
 	if (hand[0] == 0 && hand[1] == 1) {
@@ -68,12 +69,13 @@ function calResult() {
 		result[0] += 1;
 	}
 }
+*/
 
 // client
 function showResult() {
 //	$("#divResult > h1").text(`${result[0]} : ${result[1]}`);
-	$("#divResult > h2").text(`${ok[0]} : ${ok[1]}`);
-	$("#divResult > h3").text(`${hand[0]} : ${hand[1]}`);
+//	$("#divResult > h2").text(`${ok[0]} : ${ok[1]}`);
+//	$("#divResult > h3").text(`${hand[0]} : ${hand[1]}`);
 }
 
 function resetBtn(zone, myPlay) {
@@ -86,17 +88,32 @@ function checkOK() {
 		ok[0] = 0;
 		ok[1] = 0;
 		btnDisable(0);	
-		btnDisable(1);	
-		$("#imgBigIcon0").animate({left: "+=25%"}, 2000);
-		$("#imgBigIcon1").animate({right: "+=25%"}, 2000, () => {
-			calResult();
-			showResult();
+		btnDisable(1);
+//		console.log(window.innerWidth);
+		if (window.innerWidth > window.innerHeight) {	
+		$("#imgBigIcon0").animate({left: "-=25%"}, 2000);
+		$("#imgBigIcon1").animate({right: "-=25%"}, 2000, () => {
+//			calResult();
+//			showResult();
 			btnEnable();
-			$("#imgBigIcon0").css({left: "-=25%"});
-			$("#imgBigIcon1").css({right: "-=25%"});
+			$("#imgBigIcon0").css({left: "+=25%"});
+			$("#imgBigIcon1").css({right: "+=25%"});
 			$("#imgBigIcon0").attr("src","img/blank.png");
 			$("#imgBigIcon1").attr("src","img/blank.png");
 		});
+		} else {	
+			$("#imgBigIcon0").animate({top: "-=25%"}, 2000);
+			$("#imgBigIcon1").animate({bottom: "-=25%"}, 2000, () => {
+	//			calResult();
+	//			showResult();
+				btnEnable();
+				$("#imgBigIcon0").css({top: "+=25%"});
+				$("#imgBigIcon1").css({bottom: "+=25%"});
+				$("#imgBigIcon0").attr("src","img/blank.png");
+				$("#imgBigIcon1").attr("src","img/blank.png");
+			});
+		}
+		
 	} else if (ok[0] === 1 && ok[1] === 0) {
 		showResult();
 		btnDisable(0);	
