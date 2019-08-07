@@ -130,7 +130,7 @@ const hserver = http.createServer(function (req, res) {
  */ 
 }).listen(8080);
 
-const server = new WebSocket.Server({ noServer: true });
+const server = new WebSocket.Server({ noServer: true , port: 8000});
 
 const maxRoom = 2;
 let myPlayRoom = {};
