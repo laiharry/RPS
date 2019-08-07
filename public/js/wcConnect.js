@@ -3,8 +3,8 @@ class WCConnect {
 	constructor() {
         var socket = null;
 //        this.PORT =  8000;
-        this.IP ='localhost';
-//        this.IP = 'rpsserver-rps.apps.us-east-2.online-starter.openshift.com';
+//        this.IP ='localhost';
+        this.IP = 'rps-rps.apps.us-east-2.online-starter.openshift.com';
 //        this.IP ='rpsserver-rps.apps.us-east-2.online-starter.openshift.com';
 //        this.IP ='apps.us-east-2.online-starter.openshift.com';
 //    this.PORT = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8000;
