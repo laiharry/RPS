@@ -13,7 +13,7 @@ const hserver = http.createServer(function (req, res) {
 }).listen(8080);
 
 //const server = new WebSocket.Server({server : hserver, port: 8080 });
-const server = new WebSocket.Server({server : hserver });
+const server = new WebSocket.Server({server : hserver, port: 8000 });
 
 server.on('open', function open() {
   console.log('connected');
