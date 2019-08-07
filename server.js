@@ -132,7 +132,7 @@ const hserver = http.createServer(function (req, res) {
 
 const server = new WebSocket.Server({ noServer: true});
 
-const maxRoom = 2;
+const maxRoom = 100;
 let myPlayRoom = {};
 let myPlayers = [];
 
