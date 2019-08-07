@@ -4,8 +4,8 @@ const http = require('http');
 const hserver = http.createServer({
 });
 
-const server = new WebSocket.Server({server : hserver, port: 8080 });
-
+//const server = new WebSocket.Server({server : hserver, port: 8080 });
+const server = new WebSocket.Server({server : hserver });
 
 server.on('open', function open() {
   console.log('connected');
@@ -38,6 +38,8 @@ server.on('connection', function connection(ws, req) {
   });
 
 });
+
+hserver.listen(8080);
 
 console.log(process.env)
 console.log(server);
