@@ -1,7 +1,7 @@
 
 class PlayRoom {
 	constructor(name) {
-		this.roomSize = 2;
+		this.roomSize = 100;
 		this.name = name;
 		this.players = [];
 
