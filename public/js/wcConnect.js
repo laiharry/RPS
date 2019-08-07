@@ -30,7 +30,7 @@ class WCConnect {
 
 //            var s = new WebSocket(((window.location.protocol === "https:") ? "wss://" : "ws://") + window.location.host + "/ws");
 //			socket = new WebSocket("ws://localhost:8080/ws");
-            this.socket = new WebSocket("ws://ip-10-0-134-22.us-east-2.compute.internal:8000/ws");  
+            this.socket = new WebSocket("ws://0.0.0.0:8000/ws");  
 //            this.socket = new WebSocket(`ws://${this.IP}:${this.PORT}/ws`);
 //            this.socket = new WebSocket(`ws://localhost:3000/ws`);
             this.socket.onmessage = function (event) {
