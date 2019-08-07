@@ -3,32 +3,57 @@
 
 .divTitle {font-size: 1.5rem}
 #divTitleLeft {width:10%}
-#divMyName {text-align: center; width:20%}
-#divMyResult {text-align: right; width:16%}
-#divColon {text-align: center; width:8% }
-#divOpResult {text-align: left; width:16% }
 #divOpName {text-align: left; width:20% }
+#divOpResult {text-align: left; width:16% }
+#divColon {text-align: center; width:8% }
+#divMyResult {text-align: right; width:16%}
+#divMyName {text-align: center; width:20%}
 #divTitleRight {width:10% }
 
+#btnRock0 {text-align: right; width:30%}
+#btnPaper0 {text-align: center; width:30%}
+#btnScissors0 {text-align: left; width:30% }
+
+.zone1 {
+	background-color: aqua;
+}
+
+.zone0 {
+	background-color: blueviolet;
+}
+
+
 .imgBigIcon {
-	width: 30vw;
-	height: 30vw;
+    text-align: center;
+	width: 35vw;
+	height: 35vw;
 }
 
 .imgSmallIcon {
     text-align: center;
-	width: 8vw;
-	height: 8vw;
+	width: 20vw;
+	height: 20vw;
 }
 
 .divSmallIcon {
     text-align: center;
-	width: 6vm;
-	height: 6vm;
+	width: 20vw;
+	height: 20vw;
 }
 
-#imgBigIcon1 {
-	transform: scaleX(-1);
+@media (orientation: landscape) {
+	#imgBigIcon0 {
+		transform: scaleX(-1);
+	}
+  }
+
+@media (orientation: portrait) {
+	#imgBigIcon0 {
+		transform: rotate(270deg);
+	}
+	#imgBigIcon1 {
+		transform: rotate(90deg);
+	}
 }
 
 #responseText {
