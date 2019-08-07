@@ -1,5 +1,6 @@
 const WebSocket = require('ws');
 const http = require('http');
+const url = require('url');
 
 /*
 const hserver = http.createServer({
@@ -13,7 +14,10 @@ const hserver = http.createServer(function (req, res) {
 }).listen(8080);
 
 //const server = new WebSocket.Server({server : hserver, port: 8080 });
-const server = new WebSocket.Server({server : hserver, port: 8000 });
+//const server = new WebSocket.Server({server : hserver, port: 8000 });
+
+const server = new WebSocket.Server({ noServer: true });
+const server2 = new WebSocket.Server({ noServer: true });
 
 server.on('open', function open() {
   console.log('connected');
@@ -46,6 +50,27 @@ server.on('connection', function connection(ws, req) {
   });
 
 });
+
+
+hserver.on('upgrade', function upgrade(request, socket, head) {
+  const pathname = url.parse(request.url).pathname;
+ 
+  if (pathname === '/ws') {
+    server.handleUpgrade(request, socket, head, function done(ws) {
+      server.emit('connection', ws, request);
+    });
+  } else if (pathname === '/bar') {
+    server2.handleUpgrade(request, socket, head, function done(ws) {
+      server2.emit('connection', ws, request);
+    });
+  } else {
+    socket.destroy();
+  }
+});
+
+/*
+hserver.listen(8080);
+*/
 
 console.log(process.env)
 console.log(server);
