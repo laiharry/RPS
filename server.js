@@ -47,7 +47,5 @@ server.on('connection', function connection(ws, req) {
 
 });
 
-hserver.listen(8080);
-
 console.log(process.env)
 console.log(server);
