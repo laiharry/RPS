@@ -1,8 +1,16 @@
 const WebSocket = require('ws');
 const http = require('http');
 
+/*
 const hserver = http.createServer({
 });
+*/
+
+const hserver = http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.write('Hello World!');
+  res.end();
+}).listen(8080);
 
 //const server = new WebSocket.Server({server : hserver, port: 8080 });
 const server = new WebSocket.Server({server : hserver });
